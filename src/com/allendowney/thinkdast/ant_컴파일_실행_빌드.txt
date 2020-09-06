@@ -1,0 +1,17 @@
+- javac or java (컴파일,실행)
+ 
+ 1. javac : 컴파일
+ 명령어 : javac 옵션 컴파일할 파일(*.java)   
+ 옵션 : 
+        ~ -classpath : 참조할 jar파일
+		   javac -cp 참조할파일1;참조할파일2... 컴파일할 파일(*.java)
+
+ 2. java : 실행
+ 명령어 : java 옵션 실행할클래스(com.m.m.ListClientExample)
+ 옵션 : 
+        ~ -classpath : 참조할 jar파일
+		   java -cp 참조할파일1;참조할파일2... 실행할 클래스(com.b.c.ListClientExample)
+
+ 3. ant : 빌드
+ 명렁어 : ant build.xml
+ 실행 : ant 실행할클래스(ListClientExample)
