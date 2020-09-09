@@ -7,7 +7,7 @@ public class ListClientExample {
 	
 	// interface 기반 프로그래밍 or 인터페이스 프로그래밍
 	// 여기서 인터페이스는 자바 인터페이스가 아닌 일반적인 개념의 인터페이스를 말함
-	// Java는 인터페이스의 구현 클래스로 ArrayList 와 LinkedList 클래스를 제공한다
+	// JCF(Java collections framework)는 List라는 인터페이스를 정의하고 구현 클래스로 ArrayList 와 LinkedList 클래스를 제공한다
 	@SuppressWarnings("rawtypes")
 	private List list;
 	
