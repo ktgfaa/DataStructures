@@ -30,16 +30,23 @@ public class WikiNodeExample {
 			
 			// 내용을 선택하고 단락 추출하기
 			Element content = doc.getElementById("mw-content-text"); 
-			Elements paragraphs = content.select("p"); // 인자값과 일치하는 태그 요소를 모두 반환
+			Elements paragraphs = content.select("a"); // 인자값과 일치하는 태그 요소를 모두 반환
 			Element firstPara = paragraphs.get(0); // paragraphs 변수에서 첫번째 단락 선택
+			
+			// fetcher를 통한 구현
+			WikiFetcher wf = new WikiFetcher();
+			Elements Fetparagraphs = wf.fetchWikipedia(url);
+			Element FfirstPara = Fetparagraphs.get(0);
+			recursiveDFS(FfirstPara);
+			System.out.println("1");
 			
 			// 반복적 DFS 구현
 			recursiveDFS(firstPara);
-			System.out.println();
+			System.out.println("2");
 
 			// 재귀적 DFS 구현
 			iterativeDFS(firstPara);
-			System.out.println();
+			System.out.println("3");
 			
 			// 반복적 DFS하는 로직과 그 노드를 처리하는 로직을 쉽고 깔끔하게 정리한
 			// WikiNodeIterable 클래스로 구현
