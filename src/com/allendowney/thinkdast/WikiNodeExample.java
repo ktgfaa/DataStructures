@@ -34,8 +34,7 @@ public class WikiNodeExample {
 			Element firstPara = paragraphs.get(0); // paragraphs 변수에서 첫번째 단락 선택
 			
 			// fetcher를 통한 구현
-			WikiFetcher wf = new WikiFetcher();
-			Elements Fetparagraphs = wf.fetchWikipedia(url);
+			Elements Fetparagraphs = WikiFetcher.getInstance().fetchWikipedia(url);
 			Element FfirstPara = Fetparagraphs.get(0);
 			recursiveDFS(FfirstPara);
 			System.out.println("1");
