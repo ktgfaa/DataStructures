@@ -43,20 +43,25 @@ public class WikiPhilosophy {
 	public static void testConjecture(String destination, String source, int limit) throws IOException {
 		String url = source;
 		for (int i=0; i<limit; i++) {
+			// 방문한 리스트중에 포함되어있으면 중지
 			if (visited.contains(url)) {
 				System.err.println("We're in a loop, exiting.");
 				return;
+			// 방문한 리스트중에 없으면 리스트에 추가
 			} else {
 				visited.add(url);
 			}
+			
 			Element elt = getFirstValidLink(url);
+			
+			// elt가 null이면 유효한 페이지가 아니므로 종료
 			if (elt == null) {
 				System.err.println("Got to a page with no valid links.");
 				return;
 			}
 			
 			System.out.println("**" + elt.text() + "**");
-			url = elt.attr("abs:href");
+			url = elt.attr("abs:href"); // a태그의 절대주소를 반환
 			
 			if (url.equals(destination)) {
 				System.out.println("Eureka!");

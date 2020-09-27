@@ -67,6 +67,7 @@ public class WikiParser {
 		// loop through the nodes
 		for (Node node: nt) {
 			// process TextNodes to get parentheses
+			System.out.println("node : " + node);
 			if (node instanceof TextNode) {
 				processTextNode((TextNode) node);
 			}
